@@ -1,36 +1,142 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Interactive Weather Dashboard
+
+A modern, responsive dashboard application built with **Next.js**, **Tailwind CSS**, and **TypeScript** that displays weather data using the **OpenWeather API**. This dashboard provides interactive charts for temperature, humidity, and wind speed. It also supports dark mode by default and leverages browser geolocation to display local weather information. The project follows best practices with a well-organized code structure and includes unit tests with Jest and React Testing Library.
+
+## Table of Contents
+
+- [Features](#features)
+- [Tech Stack](#tech-stack)
+- [Getting Started](#getting-started)
+  - [Prerequisites](#prerequisites)
+  - [Installation](#installation)
+  - [Environment Variables](#environment-variables)
+- [Running the Application](#running-the-application)
+- [Running Tests](#running-tests)
+- [Project Structure](#project-structure)
+- [Future Improvements](#future-improvements)
+- [Acknowledgements](#acknowledgements)
+
+## Features
+
+- **Responsive Dashboard:** Clean and responsive UI built with Tailwind CSS.
+- **Real-Time Weather Data:** Fetches weather information from the OpenWeather API.
+- **Interactive Charts:** Visualize temperature, humidity, and wind speed using a reusable chart component.
+- **Geolocation Integration:** Automatically attempts to detect the user's current location to display local weather data.
+- **Dark Mode:** Dark mode is enabled by default, with an option to toggle.
+- **LocalStorage Persistence:** Remembers the last searched city across sessions.
+- **Unit Testing:** Comprehensive tests using Jest and React Testing Library ensure quality and stability.
+
+## Tech Stack
+
+- **Next.js:** Framework for server-rendered React applications.
+- **React & TypeScript:** For building robust and type-safe UI components.
+- **Tailwind CSS:** Utility-first CSS framework for rapid and modern styling.
+- **OpenWeather API:** Provides weather data.
+- **Recharts:** Library for building responsive charts (or another chart library if preferred).
+- **Jest & React Testing Library:** For unit and integration tests.
+- **SWC/Babel:** Configured for code transpilation (depending on your setup).
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
+
+- Node.js (>= 14.x)
+- npm (>= 6.x) or yarn
+
+### Installation
+
+1. **Clone the repository:**
+
+   ```bash
+   git clone https://github.com/your-username/interactive-weather-dashboard.git
+   cd interactive-weather-dashboard
+   ```
+
+2. **Install dependencies:**
+
+   ```bash
+   npm install
+   # or
+   yarn install
+   ```
+
+### Environment Variables
+
+Create a `.env.local` file in the root directory and add your OpenWeather API key:
+
+```env
+NEXT_PUBLIC_OPENWEATHER_API_KEY=YOUR_API_KEY_HERE
+```
+
+## Running the Application
+
+To start the development server, run:
 
 ```bash
 npm run dev
 # or
 yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Then, open [http://localhost:3000](http://localhost:3000) in your browser to view the dashboard.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Running Tests
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+This project uses Jest and React Testing Library for testing. To run the tests, execute:
 
-## Learn More
+```bash
+npm test
+# or
+yarn test
+```
 
-To learn more about Next.js, take a look at the following resources:
+Make sure your Jest configuration is set up to transform ESM modules if necessary.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Project Structure
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+The project is organized following best practices for Next.js applications:
 
-## Deploy on Vercel
+```
+interactive-weather-dashboard/
+├── public/                      # Static files (images, icons, etc.)
+├── src/
+│   ├── components/              # Reusable React components
+│   │   ├── Chart.tsx
+│   │   ├── Footer.tsx
+│   │   ├── Header.tsx
+│   │   ├── LoadingSpinner.tsx
+│   │   ├── SearchBar.tsx
+│   │   └── WeatherCard.tsx
+│   ├── pages/                   # Next.js pages (routing is based on file names)
+│   │   ├── _app.tsx
+│   │   ├── _document.tsx
+│   │   └── index.tsx
+│   ├── services/                # API services (e.g., weatherService.ts)
+│   ├── styles/                  # Global styles (globals.css)
+│   ├── utils/                   # Utility functions (if any)
+│   └── hooks/                   # Custom hooks (if any)
+├── .babelrc                     # Babel configuration (if used)
+├── jest.config.js               # Jest configuration
+├── jest.setup.js                # Jest setup file
+├── package.json
+├── tsconfig.json
+└── README.md
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Future Improvements
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- **7-Day Forecast:** Explore using alternative APIs or upgrading your plan to include extended forecasts.
+- **Enhanced Testing:** Add more integration tests and increase coverage.
+- **Progressive Web App (PWA):** Convert the dashboard into a PWA for offline support.
+- **Advanced Data Visualization:** Incorporate more complex charts and animations.
+- **Additional Features:** Consider implementing user authentication, saving favorite cities, or tracking historical data.
+
+## Acknowledgements
+
+- **OpenWeather API:** For providing the weather data.
+- **Next.js Team:** For the powerful framework.
+- **Tailwind CSS:** For rapid and modern styling.
+- **Jest & React Testing Library:** For making testing easier.
+
+---
+
