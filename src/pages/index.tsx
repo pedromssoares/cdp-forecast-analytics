@@ -81,8 +81,8 @@ export default function Home() {
     <div className="min-h-screen flex flex-col bg-background dark:bg-darkBackground text-text dark:text-darkText transition-colors duration-300">
       <Header />
 
-      {/* Keeps SearchBar at the top */}
-      <div className="w-full max-w-3xl mx-auto mt-6 px-4">
+ {/* Centers SearchBar while keeping it at the top */}
+ <div className="flex justify-center w-full mt-6 px-4">
         <SearchBar onSearch={fetchWeather} />
       </div>
 
