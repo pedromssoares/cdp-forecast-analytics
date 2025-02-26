@@ -43,6 +43,11 @@ A modern, responsive dashboard application built with **Next.js**, **Tailwind CS
 - Node.js (>= 14.x)
 - npm (>= 6.x) or yarn
 
+### Images
+
+<img width="1470" alt="image" src="https://github.com/user-attachments/assets/aa17453a-a97e-4ec9-bf95-6903ef726a96" />
+
+
 ### Installation
 
 1. **Clone the repository:**
